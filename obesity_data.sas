@@ -47,12 +47,12 @@ run;
 DATA B.FINAL2;
 SET B.FINAL2;
 
-/*¿¬·É±¸°£ º¯¼ö(cage) »ı¼º*/
+/*ì—°ë ¹êµ¬ê°„ ë³€ìˆ˜(cage) ìƒì„±*/
       IF 19<=age<=29 THEN cage=2; ELSE IF 30<=age<=39 THEN cage=3;
 ELSE IF 40<=age<=49 THEN cage=4; ELSE IF 50<=age<=59 THEN cage=5;
 ELSE IF 60<=age<=69 THEN cage=6; ELSE IF 70<=age THEN cage=7;
 
-/*¼ºÀÎ ºñ¸¸ À¯º´¿©ºÎ º¯¼ö(OBE) »ı¼º*/
+/*ì„±ì¸ ë¹„ë§Œ ìœ ë³‘ì—¬ë¶€ ë³€ìˆ˜(OBE) ìƒì„±*/
 IF age>=19 & ((year in (1998,2001) & HS_mens^=3) or (year=2005 & HE_mens^=3)) THEN do;
    IF HE_ht^=. & HE_wt^=. THEN HE_BMI = HE_wt / ((HE_ht/100)**2);
    IF HE_BMI^=. THEN OBE = (HE_BMI>=25);
@@ -60,10 +60,10 @@ END;
 IF age>=19 & 2007<=year<=2016 & HE_obe in (1,2,3) THEN OBE = (HE_obe=3);
 IF age>=19 & 2017<=year<=2018 & HE_obe in (1,2,3,4,5,6) THEN OBE=(HE_obe in (4,5,6));
 
-/* bmi ±Ø´ÜÄ¡ Á¦°Å*/
+/* bmi ê·¹ë‹¨ì¹˜ ì œê±°*/
 if HE_BMI<16.9995 or HE_BMI>33.1511 then delete;
 
-/*1)¿¬µµº° °¡ÁßÄ¡ º¯¼ö¸í ÅëÀÏ(wt_pool_1), 2)ÅëÇÕ°¡ÁßÄ¡ º¯¼ö(wt_pool_2) »ı¼º*/ 
+/*1)ì—°ë„ë³„ ê°€ì¤‘ì¹˜ ë³€ìˆ˜ëª… í†µì¼(wt_pool_1), 2)í†µí•©ê°€ì¤‘ì¹˜ ë³€ìˆ˜(wt_pool_2) ìƒì„±*/ 
 IF 1998<=year<=2001 THEN do; 
    wt_pool_1 = wt_ex;    wt_pool_2 = wt_ex_t;
 end;
@@ -75,11 +75,11 @@ IF 2010<=year<=2018 THEN do;
 end;
 
 
-/*±³À°¼öÁØ 3cat (edu_2)*/
+/*êµìœ¡ìˆ˜ì¤€ 3cat (edu_2)*/
 if year in (1998,2001) & educ in (0,1,2,3,4,5,6) then do;
-if educ in (0,1,2,3) then edu_2=1;   /*°íÁ¹¹Ì¸¸*/
-else if educ=4 then edu_2=2;    /*°íÁ¹*/
-else if educ in (5,6) then edu_2=3;    /*´ëÁ¹ÀÌ»ó*/
+if educ in (0,1,2,3) then edu_2=1;   /*ê³ ì¡¸ë¯¸ë§Œ*/
+else if educ=4 then edu_2=2;    /*ê³ ì¡¸*/
+else if educ in (5,6) then edu_2=3;    /*ëŒ€ì¡¸ì´ìƒ*/
 end;
 if year=2005 & educ in (0,1,2,3,4,5,6) & graduat in (1,2,3,4,5,8) then do;
 if educ in (0,1,2,3) & graduat in (1,2,3,4,5,8) then edu_2=1;
@@ -100,17 +100,17 @@ else if educ=5 & graduat=1 then edu_2=2;
 else if educ in (6,7,8) & graduat in (1,2,3,4) then edu_2=3;
 end;
 
-/*±³À°¼öÁØ 2´Ü°è·Î ´Ù½Ã³ª´® (edu_bi)*/
-IF edu_2 in (1,2) then edu_bi=1;    /*°íÁ¹ÀÌÇÏ*/
-ELSE IF edu_2=3 then edu_bi=2;    /*´ëÁ¹ÀÌ»ó*/
+/*êµìœ¡ìˆ˜ì¤€ 2ë‹¨ê³„ë¡œ ë‹¤ì‹œë‚˜ëˆ” (edu_bi)*/
+IF edu_2 in (1,2) then edu_bi=1;    /*ê³ ì¡¸ì´í•˜*/
+ELSE IF edu_2=3 then edu_bi=2;    /*ëŒ€ì¡¸ì´ìƒ*/
 
 
-/*Á÷¾÷(occp_2)*/
+/*ì§ì—…(occp_2)*/
 IF age>=15 & year in (1998,2001,2005) AND JOB_T IN (1:5) THEN do; 
-   if job_t in (1,2) then occp_2=1;    /*°ü¸®ÀÚ, »ç¹«Á¾»çÀÚ*/
-   else IF job_t=3 then occp_2=2;    /*¼­ºñ½ºÆÇ¸ÅÁ¾»çÀÚ*/
-   else IF job_t=4 then occp_2=3;    /*³ó¸²¾î¾÷Á¾»çÀÚ*/
-   else IF job_t=5 then occp_2=4;    /*±â°èÁ¶¸³, ´Ü¼ø³ë¹«Á¾»çÀÚ*/
+   if job_t in (1,2) then occp_2=1;    /*ê´€ë¦¬ì, ì‚¬ë¬´ì¢…ì‚¬ì*/
+   else IF job_t=3 then occp_2=2;    /*ì„œë¹„ìŠ¤íŒë§¤ì¢…ì‚¬ì*/
+   else IF job_t=4 then occp_2=3;    /*ë†ë¦¼ì–´ì—…ì¢…ì‚¬ì*/
+   else IF job_t=5 then occp_2=4;    /*ê¸°ê³„ì¡°ë¦½, ë‹¨ìˆœë…¸ë¬´ì¢…ì‚¬ì*/
   end;
 IF age>=15 & year in (2007:2018) AND OCCP IN (1:6) THEN do; 
 if occp in (1,2) then occp_2=1;
@@ -119,34 +119,34 @@ ELSE if occp=4 then occp_2=3;
 ELSE if occp in (5,6) then occp_2=4;
 end;
 
-/*Áö¿ª(region_2)*/
+/*ì§€ì—­(region_2)*/
 if year=1998 AND REGION^=. then do;
-if region=1 then region_2=1; /*¼­¿ï*/
-else if region in (2:6) then region_2=2; /*±¤¿ª½Ã*/
-else if region in (8:16) & town_t=1 then region_2=3; /*µ¿ Áö¿ª*/
-else if region in (8:16) & town_t=2 then region_2=4; /*À¾¸é Áö¿ª*/
+if region=1 then region_2=1; /*ì„œìš¸*/
+else if region in (2:6) then region_2=2; /*ê´‘ì—­ì‹œ*/
+else if region in (8:16) & town_t=1 then region_2=3; /*ë™ ì§€ì—­*/
+else if region in (8:16) & town_t=2 then region_2=4; /*ìë©´ ì§€ì—­*/
 end;
 if year in (2001:2015) AND REGION^=. then do;
-if region=1 then region_2=1; /*¼­¿ï*/
-else if region in (2:7) then region_2=2; /*±¤¿ª½Ã*/
-else if region in (8:16) & town_t=1 then region_2=3; /*µ¿ Áö¿ª*/
-else if region in (8:16) & town_t=2 then region_2=4; /*À¾¸é Áö¿ª*/
+if region=1 then region_2=1; /*ì„œìš¸*/
+else if region in (2:7) then region_2=2; /*ê´‘ì—­ì‹œ*/
+else if region in (8:16) & town_t=1 then region_2=3; /*ë™ ì§€ì—­*/
+else if region in (8:16) & town_t=2 then region_2=4; /*ìë©´ ì§€ì—­*/
 end;
 if year in (2016:2018) AND REGION^=. then do;
-if region=1 then region_2=1; /*¼­¿ï*/
-else if region in (2:7) then region_2=2; /*±¤¿ª½Ã*/
-else if region in (8:17) & town_t=1 then region_2=3; /* µ¿ Áö¿ª*/
-else if region in (8:17) & town_t=2 then region_2=4; /*À¾¸é Áö¿ª*/
+if region=1 then region_2=1; /*ì„œìš¸*/
+else if region in (2:7) then region_2=2; /*ê´‘ì—­ì‹œ*/
+else if region in (8:17) & town_t=1 then region_2=3; /* ë™ ì§€ì—­*/
+else if region in (8:17) & town_t=2 then region_2=4; /*ìë©´ ì§€ì—­*/
 end;
 
-/*Ãâ»ıÄÚÈ£Æ®(birthcohort)*/
+/*ì¶œìƒì½”í˜¸íŠ¸(birthcohort)*/
 birthyear=year-age;
-if 1950<=birthyear<1960 then birthcohort=1;    /*50³â´ë»ı*/
-else if 1960<=birthyear<1970 then birthcohort=2;    /*60³â´ë»ı*/
-else if 1970<=birthyear<1980 then birthcohort=3;    /*70³â´ë»ı*/
-else if 1980<=birthyear<1990 then birthcohort=4;    /*80³â´ë»ı*/
+if 1950<=birthyear<1960 then birthcohort=1;    /*50ë…„ëŒ€ìƒ*/
+else if 1960<=birthyear<1970 then birthcohort=2;    /*60ë…„ëŒ€ìƒ*/
+else if 1970<=birthyear<1980 then birthcohort=3;    /*70ë…„ëŒ€ìƒ*/
+else if 1980<=birthyear<1990 then birthcohort=4;    /*80ë…„ëŒ€ìƒ*/
 
-/*º¹ºÎºñ¸¸ º¯¼ö(ab_obe)& ±Ø´ÜÄ¡Á¦°Å*/
+/*ë³µë¶€ë¹„ë§Œ ë³€ìˆ˜(ab_obe)& ê·¹ë‹¨ì¹˜ì œê±°*/
 IF age>=19 & ((year in (1998,2001) & HS_mens^=3) or (year=2005 & HE_mens^=3)) THEN do;
 IF sex=1 & HE_WC in (61.2:105.9) then ab_obe=(he_wc>=90);
 ELSE IF sex=2 & HE_WC in (61.2:105.9) then ab_obe=(he_wc>=85);
@@ -160,10 +160,10 @@ IF sex=1 & HE_WC in (61.2:105.9) then ab_obe=(he_wc>=90);
 ELSE IF sex=2 & HE_WC in (61.2:105.9) then ab_obe=(he_wc>=85);
 END;
 
-/*º¹ºÎºñ¸¸, ºñ¸¸ µ¿½ÃÀ¯º´ º¯¼ö(both_obe)*/
+/*ë³µë¶€ë¹„ë§Œ, ë¹„ë§Œ ë™ì‹œìœ ë³‘ ë³€ìˆ˜(both_obe)*/
 if obe^=. and ab_obe^=. then both_obe=(obe=1 & ab_obe=1);
 
-/*±â¼ö(TERM)*/
+/*ê¸°ìˆ˜(TERM)*/
 IF YEAR=1998 THEN TERM=1;
 ELSE IF YEAR=2001 THEN TERM=2;
 ELSE IF YEAR=2005 THEN TERM=3;
@@ -172,7 +172,7 @@ ELSE IF YEAR IN (2010:2012) THEN TERM=5;
 ELSE IF YEAR IN (2013:2015) THEN TERM=6;
 ELSE IF YEAR IN (2016:2018) THEN TERM=7;
 
-/*ÄÚÈ£Æ® ³ªÀÌ 5¼¼¾¿ ¹­±â*/
+/*ì½”í˜¸íŠ¸ ë‚˜ì´ 5ì„¸ì”© ë¬¶ê¸°*/
  IF AGE IN (19:24) THEN COAGE=1;
 ELSE IF AGE IN (25:29) THEN COAGE=2;
 ELSE IF AGE IN (30:34) THEN COAGE=3;
