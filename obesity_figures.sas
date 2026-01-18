@@ -1,7 +1,7 @@
 libname B "C:\Users\HajinJang\Documents\FINAL";
 
 /*------------------------------------------------- FIGURES & TABLES -------------------------------------------------*/
-/*Figure1) ø¨∑…«•¡ÿ»≠«— ±‚ºˆ∫∞ 
+/*Figure1) Ïó∞Î†πÌëúÏ§ÄÌôîÌïú Í∏∞ÏàòÎ≥Ñ 
 A) MEAN BMI
 B) MEAN WC
 C) OVERALL OBESITY PREVALENCE
@@ -14,7 +14,7 @@ weight wt_pool_2;
 class cage;
 domain SEX*TERM;
 model he_bmi=cage /noint vadjust=NONE;
-estimate 'BMI_∆Ú±’'
+estimate 'BMI_ÌèâÍ∑†'
 cage 8262905 8627773 8206397 5147501 3635784 2631178/divisor=36511538;
 run;
 DATA FIG1_BMI;
@@ -37,7 +37,7 @@ weight wt_pool_2;
 class cage;
 domain SEX*TERM;
 model he_wc=cage /noint vadjust=NONE;
-estimate 'WC_∆Ú±’'
+estimate 'WC_ÌèâÍ∑†'
 cage 8262905 8627773 8206397 5147501 3635784 2631178/divisor=36511538;
 run;
 DATA FIG1_WC;
@@ -73,7 +73,7 @@ XAXIS LABEL="KNHANES wave" LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAM
 yaxis label="(cm)" labelpos=top MIN=76 MAX=88 LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Times New Roman");
 run;
 
-/*p-trend ∫∏±‚*/
+/*p-trend Î≥¥Í∏∞*/
 PROC REG DATA=FIG1_BMI;
 MODEL MEN=TERM ;
 RUN;
@@ -94,7 +94,7 @@ weight wt_pool_2;
 class cage;
 domain SEX*TERM;
 model obe=cage /noint vadjust=NONE;
-estimate '∫Ò∏∏¿≤'
+estimate 'ÎπÑÎßåÏú®'
 cage 8262905 8627773 8206397 5147501 3635784 2631178/divisor=36511538;
 run;
 DATA FIG1_OBE;
@@ -117,7 +117,7 @@ weight wt_pool_2;
 class cage;
 domain SEX*TERM;
 model ab_obe=cage /noint vadjust=NONE ;
-estimate '∫π∫Œ∫Ò∏∏¿≤'
+estimate 'Î≥µÎ∂ÄÎπÑÎßåÏú®'
 cage 8262905 8627773 8206397 5147501 3635784 2631178/divisor=36511538;
 run;
 DATA FIG1_ABOBE;
@@ -134,7 +134,7 @@ CARDS;
 RUN;
 
 title  font='Times New Roman' 'Age Standardized Overall Obesity Trends in Men and Women';
-footnote justify=center font='Times New Roman'color=grey h=9pt "Overall obesity: BMI°√25 kg/m2                                                                                                                                                                       Age-standardized by 2005 population";
+footnote justify=center font='Times New Roman'color=grey h=9pt "Overall obesity: BMI‚â•25 kg/m2                                                                                                                                                                       Age-standardized by 2005 population";
 proc sgplot data=FIG1_OBE;
   series x=TERM y=MEN/ legendlabel='Men' lineattrs=(PATTERN=SOLID COLOR=lightblue) ;
   series x=TERM y=WOMEN/ legendlabel='Women' lineattrs=(PATTERN=SOLID COLOR=lightred) ;
@@ -144,7 +144,7 @@ yaxis label="Percent" labelpos=top MIN=10 MAX=46.5 LABELATTRS=(FAMILY="Times New
 run;
 
 title  font='Times New Roman' 'Age Standardized Central Obesity Trends in Men and Women';
-footnote justify=center font='Times New Roman'color=grey h=9pt "Central obesity: WC°√85 cm                                                                                                                                                                   Age-standardized by 2005 population";
+footnote justify=center font='Times New Roman'color=grey h=9pt "Central obesity: WC‚â•85 cm                                                                                                                                                                   Age-standardized by 2005 population";
 proc sgplot data=FIG1_ABOBE;
   series x=TERM y=MEN/ legendlabel='Men' lineattrs=(PATTERN=SOLID COLOR=lightblue) ;
   series x=TERM y=WOMEN/ legendlabel='Women' lineattrs=(PATTERN=SOLID COLOR=lightred) ;
@@ -153,7 +153,7 @@ XAXIS LABEL="KNHANES wave" LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAM
 yaxis label="Percent" labelpos=top MIN=10 MAX=46.5 LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Times New Roman");
 run;
 
-/*p-trend ∫∏±‚*/
+/*p-trend Î≥¥Í∏∞*/
 PROC REG DATA=FIG1_OBE;
 MODEL MEN=TERM ;
 RUN;
@@ -169,7 +169,7 @@ RUN;
 
 
 
-/*FIGURE2) ≥≤≥‡ √‚ª˝ƒ⁄»£∆Æ ø¨∑…ø° µ˚∏• BMI, WC ∆Ú±’*/
+/*FIGURE2) ÎÇ®ÎÖÄ Ï∂úÏÉùÏΩîÌò∏Ìä∏ Ïó∞Î†πÏóê Îî∞Î•∏ BMI, WC ÌèâÍ∑†*/
 PROC SURVEYMEANS DATA=B.OBE_4 NOMCAR;
 STRATA kstrata;
 CLUSTER psu;
@@ -488,7 +488,7 @@ XAXIS LABEL="Age" LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Time
 yaxis label="Mean WC (cm)" labelpos=top MIN=68 MAX=89 LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Times New Roman");
 run;
 
-/*p-trend ∫∏±‚*/
+/*p-trend Î≥¥Í∏∞*/
 PROC REG DATA=FIG2;
 MODEL M1_BMI=AGE ;
 RUN;
@@ -554,8 +554,8 @@ RUN;
 
 
 
-/*FIGURE 3) ≥≤¿⁄ √‚ª˝ƒ⁄»£∆Æ, ±≥¿∞ºˆ¡ÿ∫∞ ø¨∑…ø° µ˚∏• ∫Ò∏∏∞˙ ∫π∫Œ∫Ò∏∏(%)*/
-/*FIGURE 4) ø©¿⁄ √‚ª˝ƒ⁄»£∆Æ, ±≥¿∞ºˆ¡ÿ∫∞ ø¨∑…ø° µ˚∏• ∫Ò∏∏∞˙ ∫π∫Œ∫Ò∏∏(%)*/
+/*FIGURE 3) ÎÇ®Ïûê Ï∂úÏÉùÏΩîÌò∏Ìä∏, ÍµêÏú°ÏàòÏ§ÄÎ≥Ñ Ïó∞Î†πÏóê Îî∞Î•∏ ÎπÑÎßåÍ≥º Î≥µÎ∂ÄÎπÑÎßå(%)*/
+/*FIGURE 4) Ïó¨Ïûê Ï∂úÏÉùÏΩîÌò∏Ìä∏, ÍµêÏú°ÏàòÏ§ÄÎ≥Ñ Ïó∞Î†πÏóê Îî∞Î•∏ ÎπÑÎßåÍ≥º Î≥µÎ∂ÄÎπÑÎßå(%)*/
 PROC SURVEYFREQ DATA=B.OBE_4 NOMCAR;
 STRATA kstrata;
 CLUSTER psu;
@@ -783,7 +783,7 @@ END;
 RUN;
 
 title  font='Times New Roman' "Overall Obesity in Men's Birth Cohorts Stratified by Education Levels & Ages";
-footnote font='Times New Roman'  h=8pt 'Overall Obesity: BMI °√ 25 kg/m2';
+footnote font='Times New Roman'  h=8pt 'Overall Obesity: BMI ‚â• 25 kg/m2';
 PROC SGPANEL DATA=FIG34;
 PANELBY COHORT/novarname headerattrs=(family="Times New Roman");
 LOESS X=COAGE Y=MENOBE_EDU1/legendlabel="High School Graduate or Below"  lineattrs=(pattern=solid color=indianred) nomarkers SMOOTH=0.7;
@@ -793,7 +793,7 @@ colAXIS LABEL="Age" LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Ti
 rowaxis label="Percent" labelpos=top LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Times New Roman") max=50;
 run;
 title  font='Times New Roman' "Central Obesity in Men's Birth Cohorts Stratified by Education Levels & Ages";
-footnote font='Times New Roman'  h=8pt 'Central Obesity: WC °√ 90cm in Men';
+footnote font='Times New Roman'  h=8pt 'Central Obesity: WC ‚â• 90cm in Men';
 PROC SGPANEL DATA=FIG34;
 PANELBY COHORT/novarname headerattrs=(family="Times New Roman");
 LOESS X=COAGE Y=MENAB_EDU1/legendlabel="High School Graduate or Below"  lineattrs=(pattern=solid color=indianred) nomarkers SMOOTH=0.7;
@@ -804,7 +804,7 @@ rowaxis label="Percent" labelpos=top LABELATTRS=(FAMILY="Times New Roman") value
 run;
 
 title  font='Times New Roman' "Overall Obesity in Women's Birth Cohorts Stratified by Education Levels & Ages";
-footnote font='Times New Roman'  h=8pt 'Overall Obesity: BMI °√ 25 kg/m2';
+footnote font='Times New Roman'  h=8pt 'Overall Obesity: BMI ‚â• 25 kg/m2';
 PROC SGPANEL DATA=FIG34;
 PANELBY COHORT/novarname headerattrs=(family="Times New Roman");
 LOESS X=COAGE Y=WOMENOBE_EDU1/legendlabel="High School Graduate or Below"  lineattrs=(pattern=solid color=indianred) nomarkers SMOOTH=0.7;
@@ -814,7 +814,7 @@ colAXIS LABEL="Age" LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Ti
 rowaxis label="Percent" labelpos=top LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Times New Roman") max=50;
 run;
 title  font='Times New Roman' "Central Obesity in Women's Birth Cohorts Stratified by Education Levels & Ages";
-footnote font='Times New Roman'  h=8pt 'Central Obesity: WC °√ 85cm in Women';
+footnote font='Times New Roman'  h=8pt 'Central Obesity: WC ‚â• 85cm in Women';
 PROC SGPANEL DATA=FIG34;
 PANELBY COHORT/novarname headerattrs=(family="Times New Roman");
 LOESS X=COAGE Y=WOMENAB_EDU1/legendlabel="High School Graduate or Below"  lineattrs=(pattern=solid color=indianred) nomarkers SMOOTH=0.7;
@@ -823,4 +823,5 @@ LOESS X=COAGE Y=WOMENAB_EDU2/legendlabel="College Graduate or Higher" lineattrs=
 colAXIS LABEL="Age" LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Times New Roman") values=(1 to 10 by 1);
 rowaxis label="Percent" labelpos=top LABELATTRS=(FAMILY="Times New Roman") valueattrs=(FAMILY="Times New Roman") max=50;
 run;
+
 
