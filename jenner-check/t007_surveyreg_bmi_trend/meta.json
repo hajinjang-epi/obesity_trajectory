@@ -1,0 +1,7 @@
+{
+  "bundle": "t007_surveyreg_bmi_trend",
+  "source_file": "obesity_figures.sas",
+  "source_blob_sha": "30bbd565c2d3486b359fba2ef5e294b57ba9fd24",
+  "source_commit": "65631e80710e26cf01642ba3b492f0307b484f04",
+  "notes": "The PROC SURVEYREG call that produces Figure 1's age-standardized mean BMI trend by KNHANES wave (the t001/t002 bundles in this PR exercise the pre-computed CARDS output of this exact call; this bundle exercises the survey-regression call itself: STRATA/CLUSTER/WEIGHT/CLASS/DOMAIN/MODEL with NOINT and VADJUST=NONE, plus the ESTIMATE statement), copied verbatim from obesity_figures.sas. The private KNHANES extract normally read via LIBNAME B is replaced with a small MOCK dataset matching the columns referenced (cage, sex, TERM, he_bmi, kstrata, psu, wt_pool_2)."
+}

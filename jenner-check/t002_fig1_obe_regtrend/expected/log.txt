@@ -1,0 +1,31 @@
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA FIG1_OBE
+
+NOTE: Processing inline DATALINES (7 lines)
+
+NOTE: Read 7 rows from DATALINES.
+NOTE: Wrote FIG1_OBE (7 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC REG data=FIG1_OBE
+
+NOTE: PROC REG: processed 1 job(s) in batch
+NOTE: ODS plot written: reg_residuals_vs_predicted.spec.json
+NOTE: ODS plot written: reg_residual_histogram_panel.spec.json
+NOTE: ODS plot written: reg_residuals_vs_obs_order.spec.json
+NOTE: ODS plot written: reg_qq_plot.spec.json
+NOTE: ODS plot written: reg_cooksd.spec.json
+NOTE: ODS plot written: reg_fitplot.spec.json
+NOTE: PROC REG ODS Graphics generated.
+NOTE: PROC REG data=FIG1_OBE
+
+NOTE: PROC REG: processed 1 job(s) in batch
+NOTE: ODS plot written: reg_residuals_vs_predicted.spec.json
+NOTE: ODS plot written: reg_residual_histogram_panel.spec.json
+NOTE: ODS plot written: reg_residuals_vs_obs_order.spec.json
+NOTE: ODS plot written: reg_qq_plot.spec.json
+NOTE: ODS plot written: reg_cooksd.spec.json
+NOTE: ODS plot written: reg_fitplot.spec.json
+NOTE: PROC REG ODS Graphics generated.

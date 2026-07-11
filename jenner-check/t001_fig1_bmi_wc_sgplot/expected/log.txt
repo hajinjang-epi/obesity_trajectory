@@ -1,0 +1,30 @@
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA FIG1_BMI
+
+NOTE: Processing inline DATALINES (7 lines)
+
+NOTE: Read 7 rows from DATALINES.
+NOTE: Wrote FIG1_BMI (7 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA FIG1_WC
+
+NOTE: Processing inline DATALINES (7 lines)
+
+NOTE: Read 7 rows from DATALINES.
+NOTE: Wrote FIG1_WC (7 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: Option TITLE changed to Age Standardized Mean BMI Trends in Men and Women.
+NOTE: Option FOOTNOTE changed to Times New Roman BMI (Body Mass Index)                                                                                                                                                                       Age-standardized by 2005 population.
+NOTE: PROC SGPLOT data=FIG1_BMI
+
+NOTE: PROC SGPLOT output written to: ./ods_output/sgplot.svg
+NOTE: Option TITLE changed to Age Standardized Mean WC Trends in Men and Women.
+NOTE: Option FOOTNOTE changed to Times New Roman WC (Waist Circumference)                                                                                                                                                                      Age-standardized by 2005 population.
+NOTE: PROC SGPLOT data=FIG1_WC
+
+NOTE: PROC SGPLOT output written to: ./ods_output/sgplot1.svg

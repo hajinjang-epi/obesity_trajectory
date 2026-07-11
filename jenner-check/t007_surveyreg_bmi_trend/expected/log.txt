@@ -1,0 +1,15 @@
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA MOCK
+
+NOTE: Processing inline DATALINES (8 lines)
+
+NOTE: Read 8 rows from DATALINES.
+NOTE: Wrote MOCK (8 rows, 7 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SURVEYREG data=MOCK
+
+NOTE: Using Python scipy version 1.16.3
+NOTE: PROC SURVEYREG completed.

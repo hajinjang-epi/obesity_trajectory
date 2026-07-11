@@ -1,0 +1,7 @@
+{
+  "bundle": "t006_surveyfreq_region_obe",
+  "source_file": "obesity_sex_stratified.sas",
+  "source_blob_sha": "c771db930b9fcc074f62cbe6677d121d9168de2b",
+  "source_commit": "65631e80710e26cf01642ba3b492f0307b484f04",
+  "notes": "The regional obesity-trend cross-tab (one of the paper's core PROC SURVEYFREQ calls: STRATA/CLUSTER/WEIGHT/TABLE with NOMCAR and ROW CHISQ), copied verbatim from obesity_sex_stratified.sas. The private KNHANES extract normally read via LIBNAME A is replaced with a 12-row MOCK dataset matching the columns the statements reference (year, sex, region_re, obe, kstrata, psu, wt_pool_2). Unlike PROC SURVEYLOGISTIC (see t005), Jenner accepts NOMCAR on PROC SURVEYFREQ without modification."
+}

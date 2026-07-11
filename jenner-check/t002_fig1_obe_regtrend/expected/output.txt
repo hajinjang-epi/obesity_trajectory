@@ -1,0 +1,42 @@
+                                                   The REG Procedure                                                    
+                                                     Model: MODEL1                                                      
+                                                Dependent Variable: MEN                                                 
+
+Source                 DF  Sum of Squares  Mean Square   F Value    Pr > F
+---------------  --------  --------------  -----------  --------  --------
+Model                   1       134.55373    134.55373     34.72    0.0020
+Error                   5        19.37444      3.87489                    
+Corrected Total         6       153.92817                                 
+
+Root MSE           1.96847    R-Square            0.8741
+Dependent Mean      33.96429    Adj R-Sq            0.8490
+Coeff Var          5.79572
+
+                       Parameter Estimates                       
+
+Variable         DF  Estimate  Standard Error   t Value  Pr > |t|
+---------  --------  --------  --------------  --------  --------
+Intercept         1  25.19571         1.66366     15.14    <.0001
+TERM              1   2.19214         0.37201      5.89    0.0020
+
+                                                   The REG Procedure                                                    
+                                                     Model: MODEL1                                                      
+                                               Dependent Variable: WOMEN                                                
+
+Source                 DF  Sum of Squares  Mean Square   F Value    Pr > F
+---------------  --------  --------------  -----------  --------  --------
+Model                   1         4.05841      4.05841      4.91    0.0776
+Error                   5         4.13667      0.82733                    
+Corrected Total         6         8.19509                                 
+
+Root MSE           0.90958    R-Square            0.4952
+Dependent Mean      25.83857    Adj R-Sq            0.3943
+Coeff Var          3.52024
+
+                       Parameter Estimates                       
+
+Variable         DF  Estimate  Standard Error   t Value  Pr > |t|
+---------  --------  --------  --------------  --------  --------
+Intercept         1  27.36143         0.76873     35.59    <.0001
+TERM              1  -0.38071         0.17189     -2.21    0.0776
+

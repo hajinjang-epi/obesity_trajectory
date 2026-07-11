@@ -1,0 +1,30 @@
+
+                         The SURVEYREG Procedure
+
+  Dependent Variable: he_bmi
+
+  Stratum Variables: kstrata
+  Cluster Variables: psu
+  Weight Variable: wt_pool_2
+
+  VADJUST=NONE
+
+                      Estimated Regression Coefficients
+
+Parameter                   Estimate       Std Error     t Value    Pr > |t|
+----------------------------------------------------------------------------
+cage_3.0                   23.400000        0.000000                  0.0000
+----------------------------------------------------------------------------
+
+                      Model-Based Standard Errors
+
+Parameter                 |Estimate|   Model Std Err  Design Std Err
+--------------------------------------------------------------------
+cage_3.0                   23.400000       21.262200        0.000000
+--------------------------------------------------------------------
+
+  R-Square = -3904.9646
+  Root MSE = 829.0622
+  Dependent Mean = 23.1685
+  Denominator DF = 1
+

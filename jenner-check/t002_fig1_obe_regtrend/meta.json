@@ -1,0 +1,7 @@
+{
+  "bundle": "t002_fig1_obe_regtrend",
+  "source_file": "obesity_figures.sas",
+  "source_blob_sha": "30bbd565c2d3486b359fba2ef5e294b57ba9fd24",
+  "source_commit": "65631e80710e26cf01642ba3b492f0307b484f04",
+  "notes": "Figure 1's overall-obesity p-trend check: FIG1_OBE holds the author's own age-standardized obesity-prevalence estimates by KNHANES wave (TERM 1-7, ~1998-2018), embedded inline in the original script, shipped unmodified. The two PROC REG steps regressing prevalence on TERM are copied verbatim (this is literally the paper's own trend-significance test). The upstream PROC SURVEYREG step that produces FIG1_OBE from the private KNHANES extract is omitted."
+}
