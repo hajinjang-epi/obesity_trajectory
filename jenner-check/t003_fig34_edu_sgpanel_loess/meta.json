@@ -1,0 +1,7 @@
+{
+  "bundle": "t003_fig34_edu_sgpanel_loess",
+  "source_file": "obesity_figures.sas",
+  "source_blob_sha": "30bbd565c2d3486b359fba2ef5e294b57ba9fd24",
+  "source_commit": "65631e80710e26cf01642ba3b492f0307b484f04",
+  "notes": "Figure 3/4 (overall-obesity prevalence by age, paneled by birth cohort, stratified by education level, smoothed with LOESS). FIG34 is a representative subset (cohorts 1-2, men, overall-obesity series) of the author's own age-standardized prevalence estimates, embedded inline in the original script. The reshape DATA step and PROC SGPANEL/LOESS call are copied verbatim except ROWAXIS's LABELPOS=top is dropped (not a documented ROWAXIS/COLAXIS option in PROC SGPANEL -- LABELPOS is valid on PROC SGPLOT's XAXIS/YAXIS but not here). The upstream PROC SURVEYFREQ step that produces these estimates from the private KNHANES extract is omitted."
+}

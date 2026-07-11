@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-07-11T06:45:00Z",
+  "_captured_run_id": "r_a301797c185c45049b8f61ff7210cb1e",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote FIG1_OBE (7 rows, 3 columns).",
+    "NOTE: PROC REG data=FIG1_OBE",
+    "NOTE: PROC REG: processed 1 job(s) in batch"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

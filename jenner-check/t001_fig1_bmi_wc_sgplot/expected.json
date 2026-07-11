@@ -1,0 +1,14 @@
+{
+  "_captured_at": "2026-07-11T06:40:00Z",
+  "_captured_run_id": "r_d00bbed720814aaf98716aef1bea2c3e",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote FIG1_BMI (7 rows, 3 columns).",
+    "NOTE: Wrote FIG1_WC (7 rows, 3 columns).",
+    "NOTE: PROC SGPLOT data=FIG1_BMI",
+    "NOTE: PROC SGPLOT data=FIG1_WC"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

@@ -1,0 +1,7 @@
+{
+  "bundle": "t004_derive_obesity_vars",
+  "source_file": "obesity_data.sas",
+  "source_blob_sha": "d6c5dd7ccc3935025a3df97fa3e8fd450d67c061",
+  "source_commit": "65631e80710e26cf01642ba3b492f0307b484f04",
+  "notes": "The core variable-derivation DATA step from obesity_data.sas (age category cage, BMI-based obesity flag OBE, pooled survey weight wt_pool_1/wt_pool_2, 3-level and binary education edu_2/edu_bi, occupation group occp_2, region_2, birth cohort, waist-based central obesity ab_obe, combined obesity both_obe, wave indicator TERM, 5-year cohort age COAGE), copied verbatim. The private KNHANES extracts read via LIBNAME A/B are replaced with a 10-row MOCK dataset built to match the columns the DATA step actually reads (age, HS_mens/HE_mens/HE_obe, HE_ht/HE_wt, HE_WC, educ/graduat, JOB_T/OCCP, REGION/town_t, wt_ex/wt_ex_t/wt_itvex, year) across several KNHANES waves. Trailing FIG34/proc-contents scaffolding from the original file is omitted."
+}

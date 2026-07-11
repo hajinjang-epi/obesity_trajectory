@@ -1,0 +1,7 @@
+{
+  "bundle": "t005_surveylogistic_income_obe",
+  "source_file": "obesity_trends_final.sas",
+  "source_blob_sha": "b66574eaa396ad526845e97bb8ce8256a4adfd50",
+  "source_commit": "65631e80710e26cf01642ba3b492f0307b484f04",
+  "notes": "The income-obesity association analysis (one of the paper's core PROC SURVEYLOGISTIC calls: STRATA/CLUSTER/WEIGHT/CLASS/MODEL/DOMAIN), copied verbatim from obesity_trends_final.sas. The private KNHANES extract normally read via LIBNAME A is replaced with a 12-row MOCK dataset matching the columns the statements reference (obe, incm, kstrata, psu, wt_pool_2, year). Two options are dropped because Jenner does not support them here (see run log for the errors this uncovered): the PROC statement's NOMCAR option, and the MODEL statement's DF=INFINITY option."
+}

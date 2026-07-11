@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_fig1_bmi_wc_sgplot",
+  "source_file": "obesity_figures.sas",
+  "source_blob_sha": "30bbd565c2d3486b359fba2ef5e294b57ba9fd24",
+  "source_commit": "65631e80710e26cf01642ba3b492f0307b484f04",
+  "notes": "Figure 1 (age-standardized mean BMI and waist circumference trends across KNHANES waves 1998-2018) from the paper's plotting script. The DATA...CARDS blocks are the author's own age-standardized point estimates, embedded inline in the original file, shipped unmodified. PROC SGPLOT title/footnote/axis options unmodified. COLOR=lightred swapped for COLOR=salmon (Jenner's SGPLOT renderer does not accept the SAS CNS color name LIGHTRED, only the coincidentally-matplotlib-compatible ones like LIGHTBLUE/LIGHTGREEN); the upstream PROC SURVEYREG step that produces these estimates from the private KNHANES extract is omitted."
+}

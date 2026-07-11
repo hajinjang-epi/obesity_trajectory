@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-07-11T07:10:00Z",
+  "_captured_run_id": "r_3f9d7f4236e94aa4a017bf466f70cecf",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote MOCK (12 rows, 6 columns).",
+    "NOTE: PROC SURVEYLOGISTIC data=MOCK",
+    "NOTE: PROC SURVEYLOGISTIC completed."
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}
